@@ -1,0 +1,112 @@
+{
+  "query_id": "q06_status_breakdown",
+  "tag": "agg",
+  "sql": "SELECT status, COUNT(*) AS n, AVG(amount) AS avg_amt\n            FROM orders\n            GROUP BY status;",
+  "sql_hash": "94a2ce50",
+  "collected_at": "2026-05-05T19:04:33.483368+00:00",
+  "wall_time_ms": 23.042,
+  "summary": {
+    "estimated_total_cost": 2486.05,
+    "estimated_startup_cost": 2486.0,
+    "estimated_rows": 4,
+    "actual_total_time_ms": 22.132,
+    "actual_rows": 4.0,
+    "planning_time_ms": 0.129,
+    "execution_time_ms": 22.161,
+    "root_node_type": "Aggregate"
+  },
+  "plan": [
+    {
+      "Plan": {
+        "Node Type": "Aggregate",
+        "Strategy": "Hashed",
+        "Partial Mode": "Simple",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 2486.0,
+        "Total Cost": 2486.05,
+        "Plan Rows": 4,
+        "Plan Width": 48,
+        "Actual Startup Time": 22.13,
+        "Actual Total Time": 22.132,
+        "Actual Rows": 4.0,
+        "Actual Loops": 1,
+        "Disabled": false,
+        "Output": [
+          "status",
+          "count(*)",
+          "avg(amount)"
+        ],
+        "Group Key": [
+          "orders.status"
+        ],
+        "Planned Partitions": 0,
+        "HashAgg Batches": 1,
+        "Peak Memory Usage": 32,
+        "Disk Usage": 0,
+        "Shared Hit Blocks": 736,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "orders",
+            "Schema": "public",
+            "Alias": "orders",
+            "Startup Cost": 0.0,
+            "Total Cost": 1736.0,
+            "Plan Rows": 100000,
+            "Plan Width": 14,
+            "Actual Startup Time": 0.012,
+            "Actual Total Time": 3.832,
+            "Actual Rows": 100000.0,
+            "Actual Loops": 1,
+            "Disabled": false,
+            "Output": [
+              "order_id",
+              "customer_id",
+              "order_date",
+              "amount",
+              "status"
+            ],
+            "Shared Hit Blocks": 736,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      },
+      "Planning": {
+        "Shared Hit Blocks": 6,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.129,
+      "Triggers": [],
+      "Execution Time": 22.161
+    }
+  ]
+}

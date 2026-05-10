@@ -1,0 +1,74 @@
+{
+  "query_id": "q01_customers_by_country",
+  "tag": "filter",
+  "sql": "SELECT * FROM customers WHERE country = 'India';",
+  "sql_hash": "7dd0a312",
+  "collected_at": "2026-05-05T19:04:33.352417+00:00",
+  "wall_time_ms": 3.008,
+  "summary": {
+    "estimated_total_cost": 230.0,
+    "estimated_startup_cost": 0.0,
+    "estimated_rows": 1250,
+    "actual_total_time_ms": 0.811,
+    "actual_rows": 1250.0,
+    "planning_time_ms": 1.061,
+    "execution_time_ms": 0.928,
+    "root_node_type": "Seq Scan"
+  },
+  "plan": [
+    {
+      "Plan": {
+        "Node Type": "Seq Scan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "customers",
+        "Schema": "public",
+        "Alias": "customers",
+        "Startup Cost": 0.0,
+        "Total Cost": 230.0,
+        "Plan Rows": 1250,
+        "Plan Width": 52,
+        "Actual Startup Time": 0.04,
+        "Actual Total Time": 0.811,
+        "Actual Rows": 1250.0,
+        "Actual Loops": 1,
+        "Disabled": false,
+        "Output": [
+          "customer_id",
+          "name",
+          "email",
+          "country",
+          "signup_date",
+          "age"
+        ],
+        "Filter": "(customers.country = 'India'::text)",
+        "Rows Removed by Filter": 8750,
+        "Shared Hit Blocks": 105,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning": {
+        "Shared Hit Blocks": 75,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 1,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 1.061,
+      "Triggers": [],
+      "Execution Time": 0.928
+    }
+  ]
+}
