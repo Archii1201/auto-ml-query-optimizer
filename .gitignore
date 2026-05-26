@@ -53,3 +53,10 @@ desktop.ini
 data/processed/
 data/features/
 *.log
+
+# Phase 2A: generated TPC-H CSVs (hundreds of MB; regenerate with setup_tpch.py)
+data/tpch/raw_data/
+# Keep collected plan JSONs (they are the actual dataset),
+# but don't commit DuckDB temp/wal files if any sneak in.
+*.duckdb
+*.duckdb.wal
